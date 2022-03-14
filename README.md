@@ -141,7 +141,7 @@ func _on_AdMob_rewarded_video_closed():
 
 ### Review APP Rating
 - Example script in Scripts_Godot/Review APP Rating
-- More information here: [https://github.com/pschw/InAppReview](https://github.com/pschw/InAppReview)
+- More information here: [https://github.com/i-bardinov/Godot-GooglePlay-InApp-Review](https://github.com/i-bardinov/Godot-GooglePlay-InApp-Review)
 
 ### Share Button Example
 - Example script in Scripts_Godot/Share_Button_Example
