@@ -1,3 +1,5 @@
+# Thank you my Lord Jesus Christ, the truth is in you, love is in you, life is in you.
+
 # export-godot-to-android-without-gradle-32bits-and-64bits
 :+1: Exporting a godot engine project for android without using gradle.  It also adds AdMob.
 :+1: Export your game to android With Admob, firebase notification, APP Review rating and Android Share
