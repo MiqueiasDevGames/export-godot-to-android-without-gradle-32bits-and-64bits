@@ -1,0 +1,4 @@
+<!-- glEsVersion is modified by the exporter, changing this value here has no effect. --> \n
+    <uses-feature \n
+        android:glEsVersion="0x00020000" \n
+        android:required="true" /> \n

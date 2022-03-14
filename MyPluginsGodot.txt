@@ -1,0 +1,3 @@
+../../plugins/GodotAdMob.5.1.0.release.aar
+../../plugins/GodotShare.release.aar
+../../plugins/ReviewPlugin.release.aar

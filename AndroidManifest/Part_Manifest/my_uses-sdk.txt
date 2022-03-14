@@ -1,0 +1,5 @@
+\n
+<uses-sdk \n
+android:minSdkVersion="18" \n
+android:targetSdkVersion="30" /> \n
+\n

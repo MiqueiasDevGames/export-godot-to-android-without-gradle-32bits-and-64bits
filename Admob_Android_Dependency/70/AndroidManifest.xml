@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="shinnil.godot.plugin.android.godotadmob"
+    android:versionCode="4"
+    android:versionName="5.1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="29" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application>
+        <meta-data
+            android:name="org.godotengine.plugin.v1.GodotAdMob"
+            android:value="shinnil.godot.plugin.android.godotadmob.GodotAdMob" />
+    </application>
+
+</manifest>

@@ -1,0 +1,44 @@
+<meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@drawable/${notificationicon}" />
+
+<service
+android:name="${package}.MyFirebaseMessagingService"
+android:exported="false" >
+<intent-filter>
+<action android:name="com.google.firebase.MESSAGING_EVENT" />
+   </intent-filter>
+</service>
+
+<provider
+android:name="com.google.firebase.provider.FirebaseInitProvider"
+android:authorities="${applicationId}.firebaseinitprovider"
+android:directBootAware="true"
+android:exported="false"
+android:initOrder="100" />
+
+
+<receiver
+android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+android:exported="true" >
+<intent-filter>
+   <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+</intent-filter>
+</receiver>
+
+
+<service
+android:name="com.google.firebase.components.ComponentDiscoveryService"
+android:exported="false" >
+
+<meta-data
+android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+android:value="com.google.firebase.components.ComponentRegistrar" />
+
+<meta-data
+android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+android:value="com.google.firebase.components.ComponentRegistrar" />
+
+<meta-data
+android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+android:value="com.google.firebase.components.ComponentRegistrar" />
+
+</service>

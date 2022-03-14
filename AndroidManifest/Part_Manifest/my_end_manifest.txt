@@ -1,0 +1,4 @@
+\n
+<!-- CHUNK_APPLICATION_END --> \n
+</application> \n
+</manifest>
