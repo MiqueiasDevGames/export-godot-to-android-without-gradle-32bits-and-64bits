@@ -165,9 +165,10 @@ func _on_AdMob_rewarded_video_closed():
 - First generate an apk by Godot and save it in an easily accessible location, as Build_aab.sh will ask for its location. You can export it to Godot's standard, so when prompted just type ../../projeto.apk
 
 
+
 # Twitter:
 - [https://twitter.com/MiqueiasGames](https://twitter.com/MiqueiasGames)
 
 # My Games: 
-- [miqueiasdevgames.github.io/](miqueiasdevgames.github.io/)
+- [https://miqueiasdevgames.github.io/](https://miqueiasdevgames.github.io/)
 
