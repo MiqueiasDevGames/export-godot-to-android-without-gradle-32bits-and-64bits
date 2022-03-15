@@ -648,10 +648,7 @@ echo ""
 echo "jarsigner  -keystore  /home/username/.android/name.keystore  My_Build/AAB/bundle.aab  alias"
 echo ""
 
-#Limpa aarquivos não mais necessarios
-#Remover apks temorary and zips
-rm -rf *.apk
-rm -rf *.zip
+
 echo "EXIT"
 
 
