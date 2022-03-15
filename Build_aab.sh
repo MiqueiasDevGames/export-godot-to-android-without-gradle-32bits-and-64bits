@@ -1,7 +1,6 @@
 #!/bin/bash
 
-#Remover apks temorary and zips
-rm -rf *.apk
+#base.zip removido
 rm -rf *.zip
 
 
@@ -110,6 +109,8 @@ rm -rf  My_Build/build/*
 
 #Deseja compilar tudo novamente
 
+#Remover apks temorary and zips
+rm -rf *.apk
 
 
 
