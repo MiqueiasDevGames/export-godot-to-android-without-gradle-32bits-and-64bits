@@ -341,14 +341,6 @@ javac_classpath_Admob=""
 d8_sourcepath_Admob=""
 
 
-#Plugin Admob Godot
-echo "For AdMob"
-echo ""
-echo "Want to Add ADMOB? y or n"
-read admob
-
-
-if [ $admob == "y" ]; then
 echo ""
 #echo "You should run AddAdmobPlugin.sh first, do you already run it? y"
 #echo "just once ok"
@@ -390,12 +382,7 @@ cd ..
 #AndroidManifest ADMOB funcionando
 
 
-#Não quer admob
-else
-echo " "
-echo "OK! you don't want Admob then."
-echo " "
-fi
+
 #FIM ADMOB ADMOB ADMOB
 
 
