@@ -35,7 +35,7 @@ echo ""
 
 #Para os icones platform_godot/res/ 
 #AJEITAR OS ICONES COLOCADOS NA PASTA ICONES
-if [ ! -d "ICONES/tmp" ]; then
+#if [ ! -d "ICONES/tmp" ]; then
 mkdir ICONES/tmp
 cp -rf platform_godot/res/values/* ICONES/android/values
 cp -rf platform_godot/res/values-fa ICONES/tmp/
@@ -53,7 +53,7 @@ rm -rf platform_godot/res/*.png
 #AJEITAR OS ICONES COLOCADOS NA PASTA ICONES FIM
 
 cp -rf ICONES/res/* platform_godot/res/
-fi
+#fi
 echo ""
 #echo "You should run AddAdmobPlugin.sh first, do you already run it? y"
 #echo "just once ok"
