@@ -18,7 +18,7 @@
             android:screenOrientation="sensor" \n
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode" \n 
             android:resizeableActivity="false" \n 
-            tools:ignore="UnusedAttribute" > \n 
+            tools:ignore="UnusedAttribute" android:exported="true"> \n 
  \n 
             <!-- Focus awareness metadata is updated at export time if the user enables it in the 'Xr Features' section. --> \n 
             <meta-data android:name="com.oculus.vr.focusaware" android:value="false" /> \n 
