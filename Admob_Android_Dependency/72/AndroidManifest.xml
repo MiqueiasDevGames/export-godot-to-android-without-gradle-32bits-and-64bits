@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ibardinov.godot.plugin.android.inappreview" >
+    package="magicnut.android.godotreviewplugin"
+    android:versionCode="1"
+    android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="16"
-        android:targetSdkVersion="31" />
+        android:minSdkVersion="21"
+        android:targetSdkVersion="29" />
 
     <application>
         <meta-data
-            android:name="org.godotengine.plugin.v1.GodotGooglePlayInAppReview"
-            android:value="ibardinov.godot.plugin.android.inappreview.GodotGooglePlayInAppReview" />
+            android:name="org.godotengine.plugin.v1.ReviewPlugin"
+            android:value="magicnut.android.godotreviewplugin.ReviewPlugin" />
     </application>
 
 </manifest>

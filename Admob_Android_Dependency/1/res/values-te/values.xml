@@ -2,11 +2,18 @@
 <resources>
 <!-- blaze-out/k8-opt/genfiles/java/com/google/android/gmscore/integ/client/admob-impl/res/values-te/strings.xml -->
 <eat-comment/>
-<string name="s1" msgid="368094699078615544">"చిత్రాన్ని సేవ్ చేయి"</string>
-<string name="s2" msgid="4550830452390689489">"చిత్ర గ్యాలరీలో చిత్రాన్ని నిల్వ చేయడానికి ప్రకటనను అనుమతించాలా?"</string>
-<string name="s3" msgid="2435407834265420668">"అనుమతించు"</string>
-<string name="s4" msgid="9167523597401839819">"తిరస్కరించు"</string>
-<string name="s5" msgid="1566682516266724847">"క్యాలెండర్ ఈవెంట్‌ను సృష్టించు"</string>
-<string name="s6" msgid="5996672174517137271">"క్యాలెండర్ ఈవెంట్‌ను సృష్టించడానికి ప్రకటనను అనుమతించాలా?"</string>
-<string name="s7" msgid="7163549807207034258">"ప్రకటనను పరీక్షించండి"</string>
+<string name="offline_notification_text">యాడ్‌ను తెరవడానికి ట్యాప్ చేయండి</string>
+<string name="offline_notification_title">మీరు ఆఫ్‌లైన్‌లో ఉన్నప్పుడు కూడా, సేవ్ చేసిన యాడ్‌ను చూడండి</string>
+<string name="offline_opt_in_confirm">సరే</string>
+<string name="offline_opt_in_confirmation">మీరు తిరిగి ఆన్‌లైన్‌కు వచ్చినప్పుడు, లింక్ కలిగిన నోటిఫికేషన్ మీకు అందుతుంది</string>
+<string name="offline_opt_in_decline">వద్దు</string>
+<string name="offline_opt_in_message">అడ్వర్టైజర్ సైట్‌కు లింక్‌ను మేము మీకు నోటిఫికేషన్‌గా పంపుతాము.</string>
+<string name="offline_opt_in_title">మీరు తిరిగి ఆన్‌లైన్‌కు వచ్చినప్పుడు యాడ్ తెరవబడుతుంది.</string>
+<string name="s1">చిత్రాన్ని సేవ్ చేయి</string>
+<string name="s2">చిత్ర గ్యాలరీలో చిత్రాన్ని నిల్వ చేయడానికి ప్రకటనను అనుమతించాలా?</string>
+<string name="s3">అనుమతించు</string>
+<string name="s4">తిరస్కరించు</string>
+<string name="s5">క్యాలెండర్ ఈవెంట్‌ను క్రియేట్ చేయండి</string>
+<string name="s6">క్యాలెండర్ ఈవెంట్‌ను క్రియేట్ చేయడానికి ప్రకటనను అనుమతించాలా?</string>
+<string name="s7">ప్రకటనను పరీక్షించండి</string>
 </resources>

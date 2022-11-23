@@ -56,9 +56,6 @@ int attr actionOverflowMenuStyle 0x0
 int attr actionProviderClass 0x0
 int attr actionViewClass 0x0
 int attr activityChooserViewStyle 0x0
-int attr adSize 0x0
-int attr adSizes 0x0
-int attr adUnitId 0x0
 int attr alertDialogButtonGroupStyle 0x0
 int attr alertDialogCenterButtons 0x0
 int attr alertDialogStyle 0x0
@@ -351,10 +348,6 @@ int color bright_foreground_inverse_material_dark 0x0
 int color bright_foreground_inverse_material_light 0x0
 int color bright_foreground_material_dark 0x0
 int color bright_foreground_material_light 0x0
-int color browser_actions_bg_grey 0x0
-int color browser_actions_divider_color 0x0
-int color browser_actions_text_color 0x0
-int color browser_actions_title_color 0x0
 int color button_material_dark 0x0
 int color button_material_light 0x0
 int color dim_foreground_disabled_material_dark 0x0
@@ -482,8 +475,6 @@ int dimen abc_text_size_subhead_material 0x0
 int dimen abc_text_size_subtitle_material_toolbar 0x0
 int dimen abc_text_size_title_material 0x0
 int dimen abc_text_size_title_material_toolbar 0x0
-int dimen browser_actions_context_menu_max_width 0x0
-int dimen browser_actions_context_menu_min_padding 0x0
 int dimen compat_button_inset_horizontal_material 0x0
 int dimen compat_button_inset_vertical_material 0x0
 int dimen compat_button_padding_horizontal_material 0x0
@@ -696,11 +687,6 @@ int id approveCellular 0x0
 int id async 0x0
 int id blocking 0x0
 int id bottom 0x0
-int id browser_actions_header_text 0x0
-int id browser_actions_menu_item_icon 0x0
-int id browser_actions_menu_item_text 0x0
-int id browser_actions_menu_items 0x0
-int id browser_actions_menu_view 0x0
 int id buttonPanel 0x0
 int id buttonRow 0x0
 int id cancelButton 0x0
@@ -822,7 +808,6 @@ int integer abc_config_activityDefaultDur 0x0
 int integer abc_config_activityShortDur 0x0
 int integer cancel_button_image_alpha 0x0
 int integer config_tooltipAnimTime 0x0
-int integer google_play_services_version 0x0
 int integer status_bar_notification_info_maxnum 0x0
 int interpolator btn_checkbox_checked_mtrl_animation_interpolator_0 0x0
 int interpolator btn_checkbox_checked_mtrl_animation_interpolator_1 0x0
@@ -859,8 +844,6 @@ int layout abc_search_dropdown_item_icons_2line 0x0
 int layout abc_search_view 0x0
 int layout abc_select_dialog_material 0x0
 int layout abc_tooltip 0x0
-int layout browser_actions_context_menu_page 0x0
-int layout browser_actions_context_menu_row 0x0
 int layout custom_dialog 0x0
 int layout downloading_expansion 0x0
 int layout godot_app_layout 0x0
@@ -914,18 +897,10 @@ int string abc_searchview_description_voice 0x0
 int string abc_shareactionprovider_share_with 0x0
 int string abc_shareactionprovider_share_with_application 0x0
 int string abc_toolbar_collapse_description 0x0
-int string common_google_play_services_unknown_issue 0x0
 int string godot_project_name_string 0x0
 int string kilobytes_per_second 0x0
 int string notification_download_complete 0x0
 int string notification_download_failed 0x0
-int string s1 0x0
-int string s2 0x0
-int string s3 0x0
-int string s4 0x0
-int string s5 0x0
-int string s6 0x0
-int string s7 0x0
 int string search_menu_title 0x0
 int string state_completed 0x0
 int string state_connecting 0x0
@@ -1242,7 +1217,6 @@ int style Theme_AppCompat_Light_Dialog_Alert 0x0
 int style Theme_AppCompat_Light_Dialog_MinWidth 0x0
 int style Theme_AppCompat_Light_NoActionBar 0x0
 int style Theme_AppCompat_NoActionBar 0x0
-int style Theme_IAPTheme 0x0
 int style Widget_AppCompat_ActionBar 0x0
 int style Widget_AppCompat_ActionBar_Solid 0x0
 int style Widget_AppCompat_ActionBar_TabBar 0x0
@@ -1364,10 +1338,6 @@ int styleable ActionMode_titleTextStyle 5
 int[] styleable ActivityChooserView { 0x0, 0x0 }
 int styleable ActivityChooserView_expandActivityOverflowButtonDrawable 0
 int styleable ActivityChooserView_initialActivityCount 1
-int[] styleable AdsAttrs { 0x0, 0x0, 0x0 }
-int styleable AdsAttrs_adSize 0
-int styleable AdsAttrs_adSizes 1
-int styleable AdsAttrs_adUnitId 2
 int[] styleable AlertDialog { 0x10100f2, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
 int styleable AlertDialog_android_layout 0
 int styleable AlertDialog_buttonIconDimen 1
@@ -1801,3 +1771,4 @@ int[] styleable ViewStubCompat { 0x10100d0, 0x10100f3, 0x10100f2 }
 int styleable ViewStubCompat_android_id 0
 int styleable ViewStubCompat_android_inflatedId 1
 int styleable ViewStubCompat_android_layout 2
+int xml file_provider_paths 0x0

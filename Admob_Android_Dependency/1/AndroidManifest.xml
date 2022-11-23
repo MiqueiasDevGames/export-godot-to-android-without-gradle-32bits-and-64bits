@@ -19,7 +19,7 @@
     package="com.google.android.gms.ads.impl" >
 
     <uses-sdk
-        android:minSdkVersion="16"
+        android:minSdkVersion="19"
         tools:overrideLibrary="androidx.browser" />
 
 </manifest>

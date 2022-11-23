@@ -1,27 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="shinnil.godot.plugin.android.godotshare"
-    android:versionCode="3"
-    android:versionName="3.0.0" >
+    package="shinnil.godot.plugin.android.godotadmob" >
 
     <uses-sdk
-        android:minSdkVersion="16"
-        android:targetSdkVersion="29" />
+        android:minSdkVersion="19"
+        android:targetSdkVersion="31" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application>
         <meta-data
-            android:name="org.godotengine.plugin.v1.GodotShare"
-            android:value="shinnil.godot.plugin.android.godotshare.GodotShare" />
-
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="${applicationId}"
-            android:exported="false"
-            android:grantUriPermissions="true" >
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_provider_paths" />
-        </provider>
+            android:name="org.godotengine.plugin.v1.GodotAdMob"
+            android:value="shinnil.godot.plugin.android.godotadmob.GodotAdMob" />
     </application>
 
 </manifest>

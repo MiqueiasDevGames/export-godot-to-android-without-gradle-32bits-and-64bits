@@ -1,5 +1,19 @@
 #!/bin/bash
 
+#Pedir nome da pasta do projeto godot
+#Para acessar a pasta
+
+echo ""
+echo "Me informe o nome da pasta do seu projeto godot"
+echo "Comece com ../"
+echo ""
+# -e -p complete tabulação
+read -e -p "> " ProjectFolder
+
+#ANDROID BUILD SLAVAR CONFIGS
+MyProjectAndroid="$ProjectFolder""android/build"
+
+
 if [ ! -d "platform_godot/" ]; then
 echo " "
 echo "creating platform_godot/"
@@ -7,17 +21,23 @@ mkdir platform_godot
 
 #monta path godot com nome do projeto
 #para pegar a lib do godot
-godotpath=../build/libs/release/godot-lib.release.aar
+godotpath="$MyProjectAndroid/libs/release/godot-lib.release.aar"
 
-unzip -o $godotpath -d platform_godot/
+
+unzip -o """$godotpath""" -d platform_godot/
 
 fi
 
-
+echo ""
+mkdir """$MyProjectAndroid/ICONES"""
+echo "Coloque na pasta ICONES EM $MyProjectAndroid"
+echo "As pastas android e res geradas nos sites"
+echo "Colocou ?"
+read colocou_icones
 
 #NAME ICONE
 echo ""
-my_icon=$(find ICONES/android -name "*-web.png")
+my_icon=$(find """$MyProjectAndroid/ICONES/android""" -name "*-web.png")
 nomeicon=$(echo $my_icon | sed "s/.*ICONES\/android\///; s/\-web\.png.*//")
 echo "Icon Name:"
 echo $nomeicon
@@ -25,7 +45,7 @@ echo ""
 
 #NAME NOTIFICATION ICON
 echo ""
-my_icon_notif=$(find ICONES/res/drawable-hdpi -name "*.png")
+my_icon_notif=$(find """$MyProjectAndroid/ICONES/res/drawable-hdpi""" -name "*.png")
 nomenotificon=$(echo $my_icon_notif | sed "s/.*ICONES\/res\/drawable-hdpi\///; s/\.png.*//")
 echo "Icon NOTIFICATION Name:"
 echo $nomenotificon
@@ -36,28 +56,32 @@ echo ""
 #Para os icones platform_godot/res/ 
 #AJEITAR OS ICONES COLOCADOS NA PASTA ICONES
 #if [ ! -d "ICONES/tmp" ]; then
-mkdir ICONES/tmp
-cp -rf platform_godot/res/values/* ICONES/android/values
-cp -rf platform_godot/res/values-fa ICONES/tmp/
-cp -rf platform_godot/res/values-ko ICONES/tmp/
-cp -rf platform_godot/res/layout ICONES/tmp/
+mkdir """$MyProjectAndroid/ICONES/tmp"""
+cp -rf platform_godot/res/values/* """$MyProjectAndroid/ICONES/android/values"""
+cp -rf platform_godot/res/values-fa """$MyProjectAndroid/ICONES/tmp/"""
+cp -rf platform_godot/res/values-ko """$MyProjectAndroid/ICONES/tmp/"""
+cp -rf platform_godot/res/layout """$MyProjectAndroid/ICONES/tmp/"""
 rm -rf platform_godot/res/*
 
 mkdir platform_godot/res/mipmap
-cp -rf ICONES/android/mipmap-xxxhdpi/* platform_godot/res/mipmap/
-cp -rf ICONES/android/* platform_godot/res/
+cp -rf """$MyProjectAndroid"""/ICONES/android/mipmap-xxxhdpi/* platform_godot/res/mipmap/
+cp -rf """$MyProjectAndroid"""/ICONES/android/* platform_godot/res/
 
-cp -rf ICONES/tmp/* platform_godot/res/
+cp -rf """$MyProjectAndroid"""/ICONES/tmp/* platform_godot/res/
 
 rm -rf platform_godot/res/*.png
 #AJEITAR OS ICONES COLOCADOS NA PASTA ICONES FIM
 
-cp -rf ICONES/res/* platform_godot/res/
+cp -rf """$MyProjectAndroid"""/ICONES/res/* platform_godot/res/
 #fi
 echo ""
 #echo "You should run AddAdmobPlugin.sh first, do you already run it? y"
 #echo "just once ok"
 #read addAdmobSh
+
+#Platform godot res está em build/platform_godot
+mkdir """$MyProjectAndroid"""/platform_godot
+cp -rf platform_godot/res """$MyProjectAndroid"""/platform_godot/
 
 
 #So pra ter certeza que a variavel existe
@@ -93,10 +117,11 @@ read admob
 if [ $admob == "y" ]; then
 echo ""
 echo "Add your com.google.android.gms.ads.APPLICATION_ID"
-echo "in the file AndroidManifest/Part_Manifest/APPLICATION_ID.txt"
+cp "AndroidManifest/Part_Manifest/APPLICATION_ID.txt" """$MyProjectAndroid/"""
+echo "in the $MyProjectAndroid/APPLICATION_ID.txt"
 echo "added ? y"
 read application_id
-my_application_id=$(cat AndroidManifest/Part_Manifest/APPLICATION_ID.txt)
+my_application_id=$(cat """$MyProjectAndroid/APPLICATION_ID.txt""")
 fi
 
 
@@ -201,7 +226,11 @@ rm -rf My_Build/src/PluginSplashScreen.txt
 
 echo "VersionCode And VersionName current:"
 echo ""
-echo -e $(cat AndroidManifest/ProjectVersion.txt)
+if [ -e """$MyProjectAndroid/ProjectVersion.txt""" ]; then
+
+echo -e $(cat """$MyProjectAndroid/ProjectVersion.txt""")
+
+fi
 echo ""
 echo ""
 echo "Now tell me the versionCode: Ex.: 1"
@@ -238,9 +267,9 @@ Add_Godot_lib=$(echo -e " \n $godot_aplication $meta_godot_editor \n")
 
 
 echo ""
-echo "Put google-services.json in folder Notification/  y?"
+echo "Put google-services.json in folder $MyProjectAndroid/  y?"
 echo ""
-echo "google-services.json FIREBASE  in  Notification/google-services.json  y?"
+echo "google-services.json FIREBASE  in  $MyProjectAndroid/google-services.json  y?"
 echo ""
 echo "Put it there only after the y"
 echo "write y and enter"
@@ -251,7 +280,7 @@ read notififirebase
 
 
 #FIREBASE GOOGLE_SERVICES.JSON XML GENERATE
-google_servcies=$(cat -E Notification/google-services.json)
+google_servcies=$(cat -E """$MyProjectAndroid/google-services.json""")
 
 
 #google_app_id 1
@@ -319,7 +348,7 @@ echo ""
 rm -rf  ../My_Build/compiled_resources/*
 
 echo ""
-if [ ! -e "ANDROID_PATH.txt" ]; then
+if [ ! -e """$MyProjectAndroid/ANDROID_PATH.txt""" ]; then
 #Pegar o android path para usar android.jar
 echo ""
 echo "Give me your path to Android Platform "
@@ -329,10 +358,10 @@ echo " "
 read androidpath
 
 >ANDROID_PATH.txt
-echo $androidpath >> ANDROID_PATH.txt
+echo $androidpath >> """$MyProjectAndroid/ANDROID_PATH.txt"""
 
 else
-androidpath=$(cat ANDROID_PATH.txt)
+androidpath=$(cat """$MyProjectAndroid/ANDROID_PATH.txt""")
 echo " "
 echo "ANDROID_PATH:"
 echo $androidpath
@@ -367,7 +396,7 @@ parte_ManifestMessaging=$(echo $ManifestMessaging | sed "s/\${applicationId}/$pa
 
 
 mkdir ../My_Build/compiled_resources_plugins
-numero=71
+numero=70
 
 echo ""
 echo "Plugins Folder Plugins"
@@ -379,9 +408,12 @@ PluginGodotManifest=$(cat -E $numero/AndroidManifest.xml)
 
 #Gerar o gen para plugins que tem res/
 
+if [ -d "$numero/res/" ]; then
+
 aapt2 compile $numero/res/**/* -o  ../My_Build/compiled_resources_plugins/
 aapt2 link --proto-format -o temporaryplugin.apk -I $androidpath/android.jar --manifest $numero/AndroidManifest.xml -R  ../My_Build/compiled_resources_plugins/*.flat --auto-add-overlay --java  ../My_Build/gen_plugin
 
+fi
 
 
 plugin_godot=$(echo $PluginGodotManifest | sed "s/.*<application>//; s/<\/application>.*//")
@@ -393,6 +425,28 @@ echo $parte_godot >> ../plugins_config/ParteManifestPlugins.txt
 numero=$(($numero+1))
 
 done
+
+
+
+#73 android dependency 
+PluginGodotManifest=$(cat -E 73/AndroidManifest.xml)
+
+#Gerar o gen para plugins que tem res/
+
+if [ -d "73/res/" ]; then
+
+aapt2 compile 73/res/**/* -o  ../My_Build/compiled_resources_plugins/
+aapt2 link --proto-format -o temporaryplugin.apk -I $androidpath/android.jar --manifest 73/AndroidManifest.xml -R  ../My_Build/compiled_resources_plugins/*.flat --auto-add-overlay --java  ../My_Build/gen_plugin
+
+fi
+
+plugin_godot=$(echo $PluginGodotManifest | sed "s/.*<application>//; s/<\/application>.*//")
+
+parte_godot=$(echo $plugin_godot | sed "s/\${applicationId}/$package/" )
+
+echo $parte_godot >> ../plugins_config/ParteManifestPlugins.txt
+
+
 
 
 echo ""
@@ -415,7 +469,7 @@ then
 
 #use AndroidManifest.xml
 #Plugin Admob for Godot
-meta_pluginAdmob_godot=$(echo $PluginAndroidManifest | sed "s/.*<application>//; s/<\/application>.*//")
+#meta_pluginAdmob_godot=$(echo $PluginAndroidManifest | sed "s/.*<application>//; s/<\/application>.*//")
 
 
 #Admob ads lite activity and provider
@@ -435,7 +489,7 @@ total_common_admob=$(echo $parte_Common_Admob | sed "s/@integer\/google_play_ser
 
 
 #Parte final do Admob e godot
-Add_Admob_Manifest=$(echo -e "\n <!-- MY APPLICATION_ID --> \n $my_application_id  \n \n <!--Plugin AdMob for Godot --> $meta_pluginAdmob_godot  $parte_Ads_Admob \n $total_common_admob \n")
+Add_Admob_Manifest=$(echo -e "\n <!-- MY APPLICATION_ID --> \n $my_application_id  \n  $parte_Ads_Admob \n $total_common_admob \n \n <!--Plugins for Godot -->" )
 
 else
 echo "OK! No AdMob"
@@ -581,7 +635,7 @@ end_androidmanifest=$(cat AndroidManifest/Part_Manifest/my_end_manifest.txt)
 #Montar AndroidMnaifest.xml
 mkdir AndroidManifest/AndroidManifest
 > AndroidManifest/AndroidManifest/AndroidManifest_tmp.xml
-> AndroidManifest/AndroidManifest/AndroidManifest.xml
+> """$MyProjectAndroid/AndroidManifest.xml"""
 
 start=$(echo -e "$version_name \n $modify_targetSdk  $supports_screens \n $modify_uses_feature \n $uses_permission \n")
 quite=$(echo -e "$orientation_application  \n $Add_Godot_lib")
@@ -591,7 +645,7 @@ end=$(echo -e "$Add_Admob_Manifest \n $outros_plugins_manifest \n $parte_Manifes
 echo -e "$start \n $quite \n $end" >> AndroidManifest/AndroidManifest/AndroidManifest_tmp.xml
 
 
-tr '$' '\n' < AndroidManifest/AndroidManifest/AndroidManifest_tmp.xml > AndroidManifest/AndroidManifest/AndroidManifest.xml
+tr '$' '\n' < AndroidManifest/AndroidManifest/AndroidManifest_tmp.xml > """$MyProjectAndroid/AndroidManifest.xml"""
 
 
 rm AndroidManifest/AndroidManifest/AndroidManifest_tmp.xml
@@ -605,9 +659,9 @@ echo $minSdkVersion >> AndroidManifest/min_api.txt
 
 
 #Salvar versionCode e versionName Atuias
-> AndroidManifest/ProjectVersion.txt
+> """$MyProjectAndroid/ProjectVersion.txt"""
 
-echo -e "VERSION_CODE =  $versionCode \n VERSION_NAME =  $versionName" >> AndroidManifest/ProjectVersion.txt
+echo -e "VERSION_CODE =  $versionCode \n VERSION_NAME =  $versionName" >> """$MyProjectAndroid/ProjectVersion.txt"""
 
 
 
@@ -645,22 +699,48 @@ echo $NameProjectGodot >> AndroidManifest/NameProject/NameProject.txt
 
 valueString="<?xml version=\"1.0\" encoding=\"utf-8\"?>  <resources> <string name=\"godot_project_name\">$NameProjectGodot</string> </resources>"
 
+
+
+
 #Modificar as Strings para o Nome do Projeto
-MyStringsName=$( find  ../build/res/ -name "godot_project_name_string.xml" )
+
+#find trazer lista de paths res xml name_strings
+MyStringsName=$( find """$MyProjectAndroid/res/""" -name "godot_project_name_string.xml" )
 > MyStringsName.txt
 > MyStringsName2.txt
 
-echo $MyStringsName >> MyStringsName.txt
-tr ' ' '\n' <  MyStringsName.txt >  MyStringsName2.txt
+#O final e xml marcar o final com %
+ajeitar1=$(echo $MyStringsName | sed -e "s/.xml /.xml%/g" )
+
+#folder name com espaço
+#marcar o espaço com *
+ajeitar2=$(echo $ajeitar1 | sed "s/ /*/g" )
+
+#salvar no arquibo temporario MyStringsName.txt
+echo $ajeitar2 >> MyStringsName.txt
+
+#usar tr para modificar o arquivo temporario MyStringsName.txt
+#substituindo % por \n para separar os caminhos linha por linha
+tr '%' '\n' < MyStringsName.txt > MyStringsName2.txt
+
+
 
 echo "..."
 
+#Arquivos xml
+#Entrando 1 por 1 e substituindo 
 for line in $(cat MyStringsName2.txt); 
 do 
 
-rm -rf $line
-> $line
-echo $valueString >> $line
+#Pegar linha e substituir os espaços do caminho folder projeto
+#marcando anteriormente com * por espaço novamente
+real_line=$(echo $line | sed "s/*/ /g")
+
+#Usar 3 aspas para colocar 1 aspa no inicio e no final
+#do path caminho para funcionar com espaços 
+rm -rf """$real_line"""
+> """$real_line"""
+echo $valueString >> """$real_line"""
 
 done
 
