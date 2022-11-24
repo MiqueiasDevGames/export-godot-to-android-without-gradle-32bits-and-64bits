@@ -15,15 +15,7 @@
 
 
 ## Using linux 32bits :innocent:
-
-**Start by downloading aapt 32bits**
-
-- Go to aapt_debian_i386 folder and unzip aapt.zip
-- and install, this is an aapt2 from debian repositories that works to generate .aab on linux 32bits
-
-unzip aapt.zip
-
-sudo dpkg -i *.deb
+Debian 11
 
 
 **Now let's download the BundleTool**
@@ -43,30 +35,30 @@ sudo dpkg -i *.deb
 
 
 **Now let's download the Android SDK Build-Tools**
- > *Note: I used version 30.0.3, however you might want to use a newer version*
+ > *Note: I used version 31.0.0, however you might want to use a newer version*
 
  > *If you want, you can download it here: (https://androidsdkoffline.blogspot.com/p/android-sdk-build-tools.html)*
 
 
-- Download: [Build-Tools Version 30.0.3](https://dl.google.com/android/repository/build-tools_r30.0.3-linux.zip)
+- Download: [Build-Tools Version 31.0.0](https://dl.google.com/android/repository/build-tools_r31-linux.zip)
 
-* You should create folder 30.0.3 in your $ANDROID_HOME/build-tools/
-* Unzip the content into $ANDROID_HOME/build-tools/30.0.3/
-* The content, not the folder, should be ../30.0.3/apksigner for example and not ../30.0.3/Android-S/apksigner
-* Inclusive isso resolve o error de apksigner no Godot Engine 3.3-stable no linux 32bits
+* You should create folder 31.0.0 in your $ANDROID_HOME/build-tools/
+* Unzip the content into $ANDROID_HOME/build-tools/31.0.0/
+* The content, not the folder, should be ../31.0.0/apksigner for example and not ../31.0.0/Android-S/apksigner
+* Inclusive isso resolve o error de apksigner no Godot Engine 3.3.3-stable no linux 32bits
 
 
 **Now let's download the Android SDK Platform**
- > *Note: I used version 30, however you might want to use a newer version*
+ > *Note: I used version 31, however you might want to use a newer version*
 
  > *If you want, you can download it here: (https://androidsdkmanager.azurewebsites.net/SDKPlatform)*
 
 
-- Download: [SDK Platform Version 30 R04](https://dl.google.com/android/repository/platform-S_r04.zip)
+- Download: [SDK Platform Version 31](https://dl.google.com/android/repository/platform-31_r01.zip)
 
-* You should create folder android-30 in your $ANDROID_HOME/platforms/
-* Unzip the content into $ANDROID_HOME/build-tools/platforms/android-30/
-* The content, not the folder, should be ../android-30/android.jar for example and not ../android-30/Android-S/android.jar
+* You should create folder android-31 in your $ANDROID_HOME/platforms/
+* Unzip the content into $ANDROID_HOME/build-tools/platforms/android-31/
+* The content, not the folder, should be ../android-31/android.jar for example and not ../android-31/Android-NN/android.jar
 
 
 # Now valid for i386 linux and x86_64 linux
@@ -99,16 +91,16 @@ sudo dpkg -i *.deb
 - 2 [https://assetstudio.androidpro.com.br/icons-notification.html](https://assetstudio.androidpro.com.br/icons-notification.html)
  
 - Unzip and put the android and res folders in the ICONES folder, To look like this:
-ICONS/android
-ICONS/res
+godot_project/android/build/ICONES/android
+godot_project/android/build/ICONES/res
 
 ### Firebase Notification Godot
-- Create your APP in firebase, to use Firebase Cloud Messaging and download your google-services.json and put it in the folder: Notification/
+- Create your APP in firebase, to use Firebase Cloud Messaging and download your google-services.json and put it in the folder: godot_project/android/build
 - You can send notification to all device using topic: GodotGame
 
 
 ### ADMOB Godot
-- Put your APPLICATION_ID in AndroidManifest/Part_Manifest/APPLICATION_ID.txt
+- Put your APPLICATION_ID in godot_project/android/build/APPLICATION_ID.txt
 - Inside the Scripts_Godot folder you will find the admob-lib folder 
 - to copy to the root of your godot project and use the o plugin as usual.
 - More information use the link: [https://github.com/Shin-NiL/Godot-Android-Admob-Plugin](https://github.com/Shin-NiL/Godot-Android-Admob-Plugin)
@@ -154,7 +146,7 @@ func _on_AdMob_rewarded_video_closed():
 ### CreateAndroidManifest.sh
 
 - You need to run it at least once before Build_aab.sh
-- This one creates the AndroidManifest.xml in AndroidManifest/AndroidManifest.xml
+- This one creates the AndroidManifest.xml in godot_project/android/build/AndroidManifest.xml
 - Run every time you change your project version.
 
 ### Build_aab.sh
