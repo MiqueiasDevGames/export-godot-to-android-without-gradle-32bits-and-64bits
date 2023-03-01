@@ -614,7 +614,7 @@ modify_application_app=$(echo $my_application_app | sed "s/godot_project_name_st
  echo "portrait or landscape" 
  read orientation
 #portrait ou landscape 
-orientation_application=$(echo $modify_application_app | sed "s/android:screenOrientation=\"landscape\"/android:screenOrientation=\"$orientation\"/2" | sed "s/PluginPackage/$package/")  
+orientation_application=$(echo $modify_application_app | sed "s/android:screenOrientation=\"landscape\"/android:screenOrientation=\"$orientation\"/2" | sed "s/PluginPackage/$package/g")  
   
  
 #Parte Application AndroidManifest.xml

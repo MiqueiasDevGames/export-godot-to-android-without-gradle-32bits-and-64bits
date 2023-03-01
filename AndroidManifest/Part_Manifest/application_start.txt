@@ -40,7 +40,19 @@
  tools:ignore="UnusedAttribute" >  \n
  
  <meta-data android:name="com.oculus.vr.focusaware" android:value="false" />  \n
+
+
+<!-- Deep Links Auth FIrebase -->
+<intent-filter android:autoVerify="true"> \n
+    <action android:name="android.intent.action.VIEW" /> \n
+    <category android:name="android.intent.category.DEFAULT" /> \n
+    <category android:name="android.intent.category.BROWSABLE" /> \n
+
+    <data android:host="kingsvspigs.web.app" android:pathPrefix="/" android:scheme="https" /> \n
+
+</intent-filter> \n
  
+
  </activity> \n
  \n 
 <!-- Custom application XML added by add-ons. --> \n 
@@ -52,3 +64,7 @@
  <meta-data
  android:name="org.godotengine.plugin.v1.PluginSplashScreen"
  android:value="PluginPackage.PluginSplashScreen" /> \n
+
+ <meta-data
+ android:name="org.godotengine.plugin.v1.AppLinks"
+ android:value="PluginPackage.AppLinks" />
