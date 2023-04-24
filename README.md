@@ -57,7 +57,7 @@ Debian 11
 - Download: [SDK Platform Version 31](https://dl.google.com/android/repository/platform-31_r01.zip)
 
 * You should create folder android-31 in your $ANDROID_HOME/platforms/
-* Unzip the content into $ANDROID_HOME/build-tools/platforms/android-31/
+* Unzip the content into $ANDROID_HOME/platforms/android-31/
 * The content, not the folder, should be ../android-31/android.jar for example and not ../android-31/Android-NN/android.jar
 
 
