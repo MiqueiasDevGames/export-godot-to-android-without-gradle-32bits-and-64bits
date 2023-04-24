@@ -159,9 +159,3 @@ func _on_AdMob_rewarded_video_closed():
 
 
 
-# Twitter:
-- [https://twitter.com/MiqueiasGames](https://twitter.com/MiqueiasGames)
-
-# My Games: 
-- [https://miqueiasdevgames.github.io/](https://miqueiasdevgames.github.io/)
-
